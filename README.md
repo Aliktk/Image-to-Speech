@@ -41,6 +41,7 @@ Image-to-Speech/
 ```
 
 ## ✨ Features
+
 **Image Captioning:** Extracts meaningful captions from images using the 'Salesforce/blip-image-captioning-large model'.
 Story Generation: Converts the caption into a creative short story using 'OpenAI's GPT-4' model.
 
@@ -51,6 +52,7 @@ Real-time Audio Output: Automatically generates and plays the audio for the gene
 
 
 ## 💻 Installation
+
 To set up the project locally, follow these steps:
 
 **1. Clone the repository:**
@@ -66,28 +68,34 @@ cd Image-to-Speech
 pip install -r requirements.txt
 ```
 
-**2. Ensure you have your OpenAI API key set up as an environment variable::**
+**3. Ensure you have your OpenAI API key set up as an environment variable::**
 
 ```bash
-export OPENAI_API_KEY='your-api-key' #or
+export OPENAI_API_KEY='your-api-key' 
+```
+or
+
+```bash
 api_key = os.getenv("OPENAI_API_KEY")
 ```
 
 ## 🚀 Usage
+
 To run the Image-to-Speech application, execute the following command:
 
 ```bash
 python image2speech_app.py
 ```
 
-
 <p>Once launched, you can upload an image, generate a caption, create a story, and listen to the audio output.</p>
 
 ## ⚙️ Configuration
+
 <p>You can modify the behavior of the application by updating the src/utils.py file to change how captions or stories are generated.
 The TTS configuration and speaker embeddings are managed in the src/tts_model.py file.</p>
 
 ## 📊 Models & Data
+
 The following pre-trained models and datasets are utilized:
 
 1. **Image Captioning:** Salesforce/blip-image-captioning-large
@@ -97,10 +105,12 @@ The following pre-trained models and datasets are utilized:
 You can provide custom image samples by placing them in the experiments/image_samples folder for testing and experimentation.
 
 ## 🔬 Src
+
 The experiments and seprate files is in Src folder :
 
 A python files for testing and tweaking the application.
 Image samples for validating the model’s captioning, storytelling, and speech synthesis.
 
 ## 🙏 Acknowledgements
+
 Gratitude to the Hugging Face, OpenAI, and Gradio teams for their amazing APIs and models. Special thanks to the community for providing invaluable resources and support.
