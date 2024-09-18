@@ -12,7 +12,7 @@ from langchain.chains import SimpleSequentialChain
 from langchain_community.llms import OpenAI
 import warnings
 warnings.filterwarnings("ignore")
-
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 # Initialize models and API keys
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-large")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-large")
@@ -73,10 +73,10 @@ def story_to_speech(story):
     try:
         print("[INFO]: Converting story to speech...")
         speech = synthesiser(story, forward_params={"speaker_embeddings": speaker_embedding})
-        sf.write("speech.wav", speech["audio"], samplerate=speech["sampling_rate"])
+        sf.write("temp_dir_tts/generated_speech.wav", speech["audio"], samplerate=speech["sampling_rate"])
         print("[INFO]: Speech file created: speech.wav")
         print("[INFO]: Returning speech file path.")
-        return "speech.wav"
+        return "temp_dir_tts/generated_speech.wav"
     except Exception as e:
         print(f"Error in converting story to speech: {e}")
         return None
