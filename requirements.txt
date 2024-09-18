@@ -1,0 +1,16 @@
+langchain
+langchain-openai
+langchain-community
+gradio
+openai
+transformers
+datasets
+torch
+soundfile
+Pillow
+python-dotenv
+numpy
+pandas
+matplotlib
+ipykernel
+-e .
